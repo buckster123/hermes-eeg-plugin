@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hermes-eeg"
+version = "0.1.0"
+description = "EEG/BCI neural interface plugin for Hermes Agent — connects OpenBCI hardware to AI agents via real-time emotion detection"
+license = "MIT"
+requires-python = ">=3.10"
+readme = "README.md"
+authors = [
+    {name = "buckster123"}
+]
+keywords = ["hermes", "eeg", "bci", "openbci", "brainflow", "emotion", "neural"]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+]
+
+[project.optional-dependencies]
+hardware = ["brainflow>=5.0"]
+all = ["brainflow>=5.0"]
+dev = ["pytest>=7.0", "pytest-cov>=4.0"]
+
+[project.urls]
+Homepage = "https://github.com/buckster123/hermes-eeg-plugin"
+
+# THIS IS THE KEY LINE — Hermes scans this entry point group
+[project.entry-points."hermes_agent.plugins"]
+hermes-eeg = "hermes_eeg"
+
+[tool.setuptools.packages.find]
+include = ["hermes_eeg*"]

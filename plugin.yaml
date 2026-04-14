@@ -1,0 +1,15 @@
+name: hermes-eeg
+version: 0.1.0
+description: "EEG/BCI neural interface — connect OpenBCI hardware to Hermes for real-time emotion detection and AI-readable felt experience generation"
+author: buckster123
+requires_env: []
+provides_tools:
+  - eeg_connect
+  - eeg_disconnect
+  - eeg_stream_start
+  - eeg_stream_stop
+  - eeg_realtime_emotion
+  - eeg_experience_get
+  - eeg_calibrate_baseline
+  - eeg_list_sessions
+provides_hooks: []
